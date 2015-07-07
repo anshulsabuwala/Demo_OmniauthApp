@@ -1,0 +1,45 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1
+      &nbsp;
+      Dashboard
+    %section.content-header
+      .row
+        .col-md-4.col-sm-6.col-xs-12
+          .info-box
+            %span.info-box-icon.bg-red
+              %i.ion.ion-ios-people-outline
+            .info-box-content
+              %span.info-box-text Tenants
+              %span.info-box-number 
+                = @total_tenants_count
+            / /.info-box-content
+          / /.info-box
+        / /.col
+        / fix for small devices only
+        .clearfix.visible-sm-block
+        .col-md-4.col-sm-6.col-xs-12
+          .info-box
+            %span.info-box-icon.bg-yellow
+              %i.ion.ion-ios-people-outline
+            .info-box-content
+              %span.info-box-text Landlords
+              %span.info-box-number 
+                = @total_landlords_count
+            / /.info-box-content
+          / /.info-box
+        / /.col
+        .col-md-4.col-sm-6.col-xs-12
+          .info-box
+            %span.info-box-icon.bg-green
+              %i.ion.ion-ios-people-outline
+            .info-box-content
+              %span.info-box-text Business Landlords
+              %span.info-box-number 
+                = @total_managers_count
+            / /.info-box-content
+          / /.info-box
+        / /.col
+      / /.row

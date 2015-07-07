@@ -1,0 +1,78 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1 Business Landlord Details
+    .row
+      .col-md-12
+        .box.box-primary
+          .box-body
+            %table.table.table-striped
+              %p#notice= notice
+              %p
+                %strong Id:
+                = @manager.id
+              %p
+                %strong Company Name:
+                = @manager.company_name
+              %p
+                %strong Phone Number:
+                = @manager.phone_number
+              %p
+                %strong Street:
+                = @manager.street
+              %p
+                %strong City:
+                = @manager.city
+              %p
+                %strong Postal Code:
+                = @manager.postal_code
+              %p
+                %strong State:
+                = @manager.state
+              %p
+                %strong Country:
+                = @manager.country
+              %p
+                %strong Contact Person FullName:
+                = @manager.contact_person_full_name
+              %p
+                %strong Contact Person Email:
+                = @manager.contact_person_email_address
+              %p
+                %strong Contact Person Occupation:
+                = @manager.contact_person_occupation
+              %p
+                %strong Contact Person Phone Number:
+                = @manager.contact_person_phone_number
+              %p
+                %strong Contact Person Position:
+                = @manager.contact_person_position
+              %p
+                %strong Occupation:
+                = @manager.occupation
+              - if @manager.contact_person_photo.present?
+                %p
+                  %strong Contact Person Photo:
+                  = image_tag @manager.contact_person_photo, :size => "50x50"
+              %p
+                %strong User Id:
+                = @manager.user_id
+              %p
+                %strong Account Type:
+                = @manager.user.account_type
+              %p
+                %strong User Name:
+                = @manager.user.username
+              %p
+                %strong Email:
+                = @manager.user.email
+              - if @manager.user.avatar.present?
+                %p
+                  %strong Photo:
+                  = image_tag @manager.user.avatar, :size => "50x50"
+              %p
+              .box-footer
+                = link_to 'Edit', edit_admin_manager_path(@manager), :class => 'btn btn-primary'
+                &nbsp;
+                = link_to 'Back', admin_managers_path, :class => 'btn btn-primary'

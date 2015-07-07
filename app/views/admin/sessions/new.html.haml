@@ -1,0 +1,47 @@
+.login-box
+  .login-logo
+    %b> Log in
+  / /.login-logo
+  .login-box-body
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      - if flash[:error]
+        #notice.alert.alert-error= flash[:error]
+        .cl &nbsp;
+      - resource.errors.full_messages.each do |msg|
+        - @msg_var = "#{msg.gsub(' ', "_")}"
+        .cl &nbsp;
+        .control-group
+          .controls
+            %span= @msg_var
+      .form-group.has-feedback
+        = f.email_field :email, :placeholder => "Email", autofocus: true, :class => 'form-control'
+        %span.glyphicon.glyphicon-envelope.form-control-feedback
+        - if resource.errors[:email].any?
+          %span= resource.errors[:email].first
+      .form-group.has-feedback
+        = f.password_field :password, :placeholder => "Password", autocomplete: "off", :class => 'form-control'
+        %span.glyphicon.glyphicon-lock.form-control-feedback
+        - if resource.errors[:password].any?
+          %span= resource.errors[:password].first
+      .row
+        .col-xs-8
+          .checkbox.icheck
+            - if devise_mapping.rememberable?
+              %label
+                %input{:type => "checkbox"}
+                  Remember Me
+        / /.col
+        .col-xs-4
+          %button.btn.btn-primary.btn-block.btn-flat{:type => "submit"} Sign In
+        / /.col
+    - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+      = link_to "Forgot your password?", new_password_path(resource_name), :class => 'btn btn-primary'
+
+:javascript
+$(function () {
+$('input').iCheck({
+checkboxClass: 'icheckbox_square-blue',
+radioClass: 'iradio_square-blue',
+increaseArea: '20%' // optional
+});
+});

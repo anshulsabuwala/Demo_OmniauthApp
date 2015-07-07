@@ -1,0 +1,52 @@
+%section.content
+  .row
+    .col-xs-12
+      .box.box-primary
+        .box-body
+          %table.table.table-bordered
+            %tr
+              %th Title
+              %th Full Name
+              %th Gender
+              %th Date of Birth
+              %th Address Type
+              %th Address
+              %th City
+              %th Postal Code
+              %th Country
+              %th Occupation
+              %th Actions
+            %tr
+            - if @landlords.size > 0
+              - @landlords.each do |landlord|
+                %tr
+                  %td= landlord.title
+                  %td= landlord.full_name
+                  %td= landlord.gender
+                  %td= landlord.date_of_birth
+                  %td= landlord.address_type
+                  %td= landlord.address
+                  %td= landlord.city
+                  %td= landlord.postal_code
+                  %td= landlord.country
+                  %td= landlord.occupation
+                  %td
+                    = link_to 'Edit', edit_admin_landlord_path(landlord)
+                    |
+                    = link_to 'Show', admin_landlord_path(landlord)
+                    |
+                    = link_to 'Delete', admin_landlord_path(landlord) , :method=>:delete, :data => {:confirm=>"Are you sure?" }
+            - else
+              %div No record found.
+        .box-footer.clearfix
+          %ul.pagination.pagination-sm.no-margin.pull-right
+            %li
+            = will_paginate @landlord, :previous_label => '&laquo;', :next_label => '&raquo;'
+            %br/
+          = link_to 'Add New', new_admin_landlord_path, :class => 'btn btn-primary'
+        / /.box-body
+      / /.box
+    / /.col
+  / /.row
+/ /.content
+/ /.content-wrapper

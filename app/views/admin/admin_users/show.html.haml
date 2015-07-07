@@ -1,0 +1,21 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1 Admin Details
+    .row
+      .col-md-12
+        .box.box-primary
+          .box-body
+            %table.table.table-striped
+            %p#notice= notice
+            %p
+              %strong Id:
+              = @admin.id 
+            %p
+              %strong Email:
+              = @admin.email 
+            %p                        
+            = link_to 'Edit', edit_admin_admin_user_path(@admin), :class => 'btn btn-primary'
+            &nbsp;
+            = link_to 'Back', admin_admin_users_path, :class => 'btn btn-primary'

@@ -1,0 +1,13 @@
+!!!
+%html{"ng-app" => "YourNextRoom"}
+  %head
+    %title Welcome to YNR::
+    = stylesheet_link_tag 'application', media: 'all'
+    %script{:src => "http://apis.google.com/js/client.js"}
+    %script{:src => "http://apis.google.com/js/api.js"}
+    %script{:src => "https://maps.googleapis.com/maps/api/js?libraries=places"}
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
+  %body
+    #wrap{"ng-view" => ""}
+    = javascript_include_tag 'application'

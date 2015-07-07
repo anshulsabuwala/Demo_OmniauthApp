@@ -1,0 +1,66 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1 Tenant Details
+    .row
+      .col-md-12
+        .box.box-primary
+          .box-body
+            %table.table.table-striped
+            %p#notice= notice
+            %p
+              %strong Id:
+              = @tenant.id
+            %p
+              %strong Title:
+              = @tenant.title
+            %p
+              %strong Full Name:
+              = @tenant.full_name
+            %p
+              %strong Gender:
+              = @tenant.gender
+            %p
+              %strong Date of Birth:
+              = @tenant.date_of_birth
+            %p
+              %strong Address Type:
+              = @tenant.address_type
+            %p
+              %strong Address:
+              = @tenant.address
+            %p
+              %strong City:
+              = @tenant.city
+            %p
+              %strong Postal Code:
+              = @tenant.postal_code
+            %p
+              %strong Occupation:
+              = @tenant.occupation
+            %p
+              %strong Description:
+              = @tenant.brief_description
+            %p
+              %strong User Id:
+              = @tenant.user_id
+            %p
+              %strong Account Type:
+              = @tenant.user.account_type
+            %p
+              %strong User Name:
+              = @tenant.user.username
+            %p
+              %strong Email:
+              = @tenant.user.email
+            - if @tenant.user.avatar.present?
+              %p
+                %strong Photo:
+                = image_tag @tenant.user.avatar, :size => "50x50"
+            %p
+              .box-footer
+                = link_to 'Edit', edit_admin_tenant_path(@tenant), :class => 'btn btn-primary'
+                &nbsp;
+                = link_to 'Back', admin_tenants_path, :class => 'btn btn-primary'
+                

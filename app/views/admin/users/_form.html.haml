@@ -1,0 +1,32 @@
+%section.content
+  .row
+    .col-md-12
+      .box.box-primary
+        = form_for ["admin", @user] do |f|
+          .box-body
+            - if @user.errors.any?
+              #error_explanation
+                %h2
+                  = pluralize(@user.errors.count, "error")
+                  prohibited this admin from being saved:
+                %ul
+                  - @user.errors.full_messages.each do |msg|
+                    %li= msg
+            %br    
+            .field
+              %label Email
+              = f.text_field :email, :class => 'form-control'
+            %br
+            .field
+              %label Password
+              %br
+                = f.password_field :password, :class => 'form-control'
+            %br
+            .field
+              %label Password Confirmation
+              %br
+                = f.password_field :password_confirmation, :class => 'form-control'    
+            %br
+            .actions
+              = f.submit 'Submit', :class => 'btn btn-primary'
+              = link_to 'Back', admin_users_path, :class => 'btn btn-primary'

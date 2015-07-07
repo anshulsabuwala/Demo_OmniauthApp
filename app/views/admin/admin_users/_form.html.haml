@@ -1,0 +1,37 @@
+%section.content
+  .row
+    .col-md-12
+      .box.box-primary
+        = form_for ["admin", @admin], url: @admin.new_record? ? admin_admin_users_path : admin_admin_user_path(@admin) do |f|
+          .box-body
+            %br    
+            .field
+              %label Email
+              = f.text_field :email, :class => 'form-control'
+              - if @admin.errors[:email].any?
+                %span.myerror
+                  = @admin.errors[:email].first
+            %br
+            .field
+              %label Password
+              %br
+                = f.password_field :password, :class => 'form-control'
+                - if @admin.errors[:password].any?
+                  %span.myerror
+                    = @admin.errors[:password].first
+            %br
+            .field
+              %label Password Confirmation
+              %br
+                = f.password_field :password_confirmation, :class => 'form-control' 
+                - if @admin.errors[:password_confirmation].any?
+                  %span.myerror
+                    = @admin.errors[:password_confirmation].first  
+              %br
+              .box-footer
+                = f.submit 'Submit', :class => 'btn btn-primary' 
+                = link_to 'Back', admin_admin_users_path, :class => 'btn btn-primary' 
+            / %br
+            / .actions
+            /   = f.submit 'Submit', :class => 'btn btn-primary'
+            /   = link_to 'Back', admin_admin_users_path, :class => 'btn btn-primary'                    

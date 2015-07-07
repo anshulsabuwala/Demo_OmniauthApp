@@ -1,0 +1,36 @@
+%section.content
+  .row
+    .col-xs-12
+      .box.box-primary
+        .box-body
+          %table.table.table-bordered
+            %tr
+              %th Id
+              %th Email
+              %th Actions
+            %tr
+            - if @admins.size > 0
+              - @admins.each do |admin|
+                %tr
+                  %td= admin.id
+                  %td= admin.email
+                  %td
+                    = link_to 'Edit', edit_admin_admin_user_path(admin)
+                    |
+                    = link_to 'Show', admin_admin_user_path(admin)
+                    |
+                    = link_to 'Delete', admin_admin_user_path(admin) , :method=>:delete, :data => {:confirm=>"Are you sure?" }
+            - else
+              %div No record found.
+        / /.box-body
+        .box-footer.clearfix
+          %ul.pagination.pagination-sm.no-margin.pull-right
+            %li
+            = will_paginate @admins, :previous_label => '&laquo;', :next_label => '&raquo;'
+            %br/
+          = link_to 'Add New', new_admin_admin_user_path, :class => 'btn btn-primary'
+      / /.box
+    / /.col
+  / /.row
+/ /.content
+/ /.content-wrapper

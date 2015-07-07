@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyString
+  phone_number: MyString
+  street: MyString
+  city: MyString
+  postal_code: MyString
+  state: MyString
+  country: MyString
+  company_description: MyText
+  occupation: MyString
+  page_url: MyString
+  add_page: false
+  verify_properties: MyString
+  estate_agent: MyString
+  contact_person_full_name: MyString
+  contact_person_email_address: MyString
+  contact_person_occupation: MyString
+  contact_person_phone_number: MyString
+  contact_person_position: MyString
+
+two:
+  company_name: MyString
+  phone_number: MyString
+  street: MyString
+  city: MyString
+  postal_code: MyString
+  state: MyString
+  country: MyString
+  company_description: MyText
+  occupation: MyString
+  page_url: MyString
+  add_page: false
+  verify_properties: MyString
+  estate_agent: MyString
+  contact_person_full_name: MyString
+  contact_person_email_address: MyString
+  contact_person_occupation: MyString
+  contact_person_phone_number: MyString
+  contact_person_position: MyString

@@ -1,0 +1,29 @@
+/ Left side column. contains the logo and sidebar
+%aside.main-sidebar
+  / sidebar: style can be found in sidebar.less
+  %section.sidebar
+    / Sidebar user panel
+    .user-panel
+      .pull-left.image
+        - if admin_signed_in?
+          %img.img-circle{:alt => "Admin User", :src => "/assets/user6-128x128.jpg"}
+        - else
+          %img.img-circle{:alt => "Default User", :src => "/assets/user-big-icon.png"}
+      .pull-left.info 
+        - if admin_signed_in?
+          %p Admin User
+        - else
+          %p Default User
+    / sidebar menu: : style can be found in sidebar.less
+    %ul.sidebar-menu
+      %li.active.treeview
+        %li.header USERS
+        %li
+          = link_to "Admin Users", admin_admin_users_path          
+        %li
+          = link_to "Tenants", admin_tenants_path 
+        %li
+          = link_to "Landlords", admin_landlords_path 
+        %li
+          = link_to "Business Landlords", admin_managers_path 
+  / /.sidebar

@@ -1,0 +1,66 @@
+/ Content Wrapper. Contains page content
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    %h1 Landlords Details
+    .row
+      .col-md-12
+        .box.box-primary
+          .box-body
+            %table.table.table-striped
+              %p#notice= notice
+              %p
+                %strong Landlord Id:
+                = @landlord.id
+              %p
+                %strong Title:
+                = @landlord.title
+              %p
+                %strong Full Name:
+                = @landlord.full_name
+              %p
+                %strong Gender:
+                = @landlord.gender
+              %p
+                %strong Date of Birth:
+                = @landlord.date_of_birth
+              %p
+                %strong Address Type:
+                = @landlord.address_type
+              %p
+                %strong Address:
+                = @landlord.address
+              %p
+                %strong City:
+                = @landlord.city
+              %p
+                %strong Postal Code:
+                = @landlord.postal_code
+              %p
+                %strong Occupation:
+                = @landlord.occupation
+              %p
+                %strong Description:
+                = @landlord.brief_description
+              %p
+                %strong User Id:
+                = @landlord.user_id
+              %p
+                %strong Account Type:
+                = @landlord.user.account_type
+              %p
+                %strong User Name:
+                = @landlord.user.username
+              %p
+                %strong Email:
+                = @landlord.user.email
+              - if @landlord.user.avatar.present?
+                %p
+                  %strong Photo:
+                  = image_tag @landlord.user.avatar, :size => "50x50"
+              %p
+              .box-footer
+                = link_to 'Edit', edit_admin_landlord_path(@landlord), :class => 'btn btn-primary'
+                &nbsp;
+                = link_to 'Back', admin_landlords_path, :class => 'btn btn-primary'
+              

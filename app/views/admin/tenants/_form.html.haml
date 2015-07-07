@@ -1,0 +1,147 @@
+%section.content
+  .row
+    .col-md-12
+      .box.box-primary
+        = form_for ["admin", @tenant] do |f|
+          = f.fields_for :user do |builder|
+            .box-body
+              %br
+              .field
+                %label User Name
+                = builder.text_field :username, :class => 'form-control'
+                - if @tenant.user.errors[:username].any?
+                  %span.myerror
+                    = @tenant.user.errors[:username].first
+              %br
+              .field
+                %label Account Type
+                %br
+                = builder.select :account_type, options_for_select([["Select Account Type", ""], "Basic", "Premium"]), {}, :class => 'form-control'
+                - if @tenant.user.errors[:account_type].any?
+                  %span.myerror
+                    = @tenant.user.errors[:account_type].first
+              %br
+              .field
+                = builder.file_field :avatar, :id => "filePhoto"
+                %img{:alt => "", :id => "imgPreview"}            
+              %br
+              .field
+                %label Email
+                %br
+                = builder.text_field :email, :class => 'form-control'
+                - if @tenant.user.errors[:email].any?
+                  %span.myerror
+                    = @tenant.user.errors[:email].first
+
+              %br
+              .field
+                %label Password
+                %br
+                = builder.password_field :password, :class => 'form-control'
+                - if @tenant.user.errors[:password].any?
+                  %span.myerror
+                    = @tenant.user.errors[:password].first
+              %br
+              .field
+                %label Password Confirmation
+                %br
+                = builder.password_field :password_confirmation, :class => 'form-control'
+                - if @tenant.user.errors[:password_confirmation].any?
+                  %span.myerror
+                    = @tenant.user.errors[:password_confirmation].first
+              %br
+              .field
+                %label Title
+                %br
+                = f.select :title, options_for_select([["Select Title", ""], "Mr", "Mrs", "Ms", "Miss", "Sir", "Madam"]), {}, :class => 'form-control'
+                - if @tenant.errors[:title].any? 
+                  %span.myerror
+                    = @tenant.errors[:title].first
+              %br
+              .field
+                %label Full Name
+                = f.text_field :full_name, :class => 'form-control'
+                - if @tenant.errors[:full_name].any?
+                  %span.myerror
+                    = @tenant.errors[:full_name].first
+                %br
+                .field
+                  %label Gender
+                  %br
+                  = f.select :gender, options_for_select([["Select Gender", ""], "Male", "Female"]), {}, :class => 'form-control'
+                  - if @tenant.errors[:gender].any?
+                    %span.myerror
+                      = @tenant.errors[:gender].first
+                %br
+                .field
+                  %label Date of Birth
+                  = f.text_field :date_of_birth, :class => 'form-control'
+                  - if @tenant.errors[:date_of_birth].any?
+                    %span.myerror
+                      = @tenant.errors[:date_of_birth].first
+                %br
+                .field
+                  %label Address Type
+                  %br
+                  = f.select :address_type, options_for_select(["Home", "Work"]), {}, :class => 'form-control'
+                  - if @tenant.errors[:address_type].any?
+                    %span.myerror
+                      = @tenant.errors[:address_type].first
+                %br
+                .field
+                  %label Address
+                  = f.text_area :address, :class => 'form-control'
+                  - if @tenant.errors[:address].any?
+                    %span.myerror
+                      = @tenant.errors[:address].first
+                %br
+                .field
+                  %label City      
+                  = f.text_field :city, :class => 'form-control'
+                  - if @tenant.errors[:city].any?
+                    %span.myerror
+                      = @tenant.errors[:city].first
+                %br
+                .field
+                  %label Postal Code
+                  = f.text_field :postal_code, :class => 'form-control'
+                  - if @tenant.errors[:postal_code].any?
+                    %span.myerror
+                      = @tenant.errors[:postal_code].first
+                %br
+                .field
+                  %label Country
+                  = f.text_field :country, :class => 'form-control'
+                  - if @tenant.errors[:country].any?
+                    %span.myerror
+                      = @tenant.errors[:country].first
+                %br
+                .field
+                  %label Occupation
+                  %br
+                  = f.select :occupation, options_for_select([["Select Occupation", ""], "Student", "Professional", "Other"]), {}, :class => 'form-control'
+                  - if @tenant.errors[:occupation].any?
+                    %span.myerror
+                      = @tenant.errors[:occupation].first
+                %br
+                .field
+                  %label Brief Description
+                  = f.text_area :brief_description, :class => 'form-control'
+                / %br
+                / .actions
+                /   = f.submit 'Submit', :class => 'btn btn-primary'
+                /   = link_to 'Back', admin_tenants_path, :class => 'btn btn-primary'
+                %br
+                .box-footer
+                  = f.submit 'Submit', :class => 'btn btn-primary' 
+                  = link_to 'Back', admin_tenants_path, :class => 'btn btn-primary'
+:javascript
+  var imageLoader = document.getElementById('filePhoto');
+      imageLoader.addEventListener('change', handleImage, false);
+  function handleImage(e) {
+      var reader = new FileReader();
+      reader.onload = function (event) {
+          $('#imgPreview').attr('src',event.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  }

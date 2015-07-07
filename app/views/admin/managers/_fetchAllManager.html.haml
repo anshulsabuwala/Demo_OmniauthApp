@@ -1,0 +1,45 @@
+%section.content
+  .row
+    .col-xs-12
+      .box.box-primary
+        .box-body
+          %table.table.table-bordered
+            %tr              
+              %th Company Name
+              %th Company Phone Number
+              %th Contact Person Name
+              %th Contact Person Phone Number
+              %th Contact Person Email
+              %th Contact Person Position
+
+              %th Actions
+            %tr
+            - if @managers.size > 0
+              - @managers.each do |manager|
+                %tr
+                  %td= manager.company_name
+                  %td= manager.phone_number
+                  %td= manager.contact_person_full_name
+                  %td= manager.contact_person_phone_number
+                  %td= manager.contact_person_email_address
+                  %td= manager.contact_person_position
+                  %td
+                    = link_to 'Edit', edit_admin_manager_path(manager) 
+                    |
+                    = link_to 'Show', admin_manager_path(manager)
+                    |
+                    = link_to 'Delete', admin_manager_path(manager) , :method=>:delete, :data => {:confirm=>"Are you sure?" }
+            - else
+              %div No record found.
+        .box-footer.clearfix
+          %ul.pagination.pagination-sm.no-margin.pull-right
+            %li
+              = will_paginate @managers, :previous_label => '&laquo;', :next_label => '&raquo;'
+            %br/
+          = link_to 'Add New', new_admin_manager_path, :class => 'btn btn-primary'
+        / /.box-body
+      / /.box
+    / /.col
+  / /.row
+/ /.content
+/ /.content-wrapper

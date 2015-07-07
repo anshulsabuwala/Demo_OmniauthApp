@@ -1,0 +1,45 @@
+%header.main-header
+  %a.logo{:href => "/admin"}
+    / LOGO
+    YourNextRoom 
+  / Header Navbar: style can be found in header.less
+  %nav.navbar.navbar-static-top{:role => "navigation"}   
+    / Navbar Right Menu
+    .navbar-custom-menu
+      %ul.nav.navbar-nav
+        / User Account: style can be found in dropdown.less
+        %li.dropdown.user.user-menu
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            - if admin_signed_in?
+              %img.user-image{:alt => "Admin User", :src => "/assets/user6-128x128.jpg"}
+            - else
+              %img.user-image{:alt => "Default User", :src => "/assets/user-big-icon.png"}
+            - if admin_signed_in?
+              %span.hidden-xs #{current_admin.email}
+            - else
+              %span.hidden-xs Default User
+          %ul.dropdown-menu
+            / User image
+            %li.user-header
+              - if admin_signed_in?
+                %img.img-circle{:alt => "Admin User", :src => "/assets/user6-128x128.jpg"}/
+              - else
+                %img.img-circle{:alt => "Default User", :src => "/assets/user-big-icon.png"}/
+              %p
+              - if admin_signed_in?
+                %p
+                  %span.hidden-xs #{current_admin.email}
+                %p
+                  %small Member since #{current_admin.created_at}
+              - else
+                %p
+                  %span.hidden-xs Default User
+                %p
+                  %small Member since Nov. 2012
+            / Menu Footer
+            %li.user-footer
+              .pull-left
+                %a.btn.btn-default.btn-flat{:href => "#"} Profile
+              .pull-right
+                = link_to "Sign out", destroy_admin_session_path, :method => :delete, :class => "btn btn-default"
+                

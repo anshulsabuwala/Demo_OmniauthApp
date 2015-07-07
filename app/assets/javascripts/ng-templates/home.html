@@ -1,0 +1,725 @@
+<div class="publicNav">
+  <nav class="navbar navbar-inverse navbar-fixed-top mobilePositionRelative">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+        <span class="icon-bar"></span> </button>
+        <a class="navbar-brand logo" href="#"></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse navbar-right topRightUserLink">
+        <a href="javascript:void(0)" open-dialog modal-name="#myModal">Sign Up</a>
+        <a href="javascript:void(0)" open-dialog modal-name="#myLoginModal">Log In</a>
+        <a href="#">Help</a>
+        <a href="#" class="listPropertyBtn"></a> </div>
+      <!--/.navbar-collapse --> 
+    </div>
+  </nav>
+</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="mainContainerPublic">
+  <div class="container-fluid">
+    <div class="topslider">
+      <div class="row">
+        <div class="col-md-12 paddingLeftRight0">
+          <div id="carousel-example-generic" class="carousel slide" my-carousel>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active"> <img src="/assets/slider-img1.jpg" width="1260" height="624" alt="">
+                <div class="carousel-caption"> ... </div>
+              </div>
+              <div class="item"> <img src="/assets/slider-img2.jpg" width="1260" height="624" alt="">
+                <div class="carousel-caption"> ... </div>
+              </div>
+              <div class="item"> <img src="/assets/slider-img3.jpg" width="1260" height="624" alt="">
+                <div class="carousel-caption"> ... </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="welcomeSection">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Welcome</h1>
+              To Your Next Room
+              <div class="welcomeSearch">
+                <form>
+                  <div class="welcomeSearchBtn"> <a href="#"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a> 
+                  </div>
+                </form>
+                  <input type="text" class="form-control" id="" g-places-autocomplete ng-model="google_places" placeholder="Where do you want to live ?">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="thumbBlock">
+      <ul>
+        <li> <a href="#"> <div class="instantBooking"></div>
+          <p>Instant booking</p>
+          </a> </li>
+        <li> <a href="#" > <div class="leasingIcon"></div>
+          <p>Lease creating</p>
+          </a> </li>
+        <li> <a href="#" > <div class="calIcon"></div>
+          <p>Calendar  & reminder</p>
+          </a> </li>
+        <li> <a href="#" ><div class="dollarIcon"></div>
+          <p>Online Payment</p>
+          </a> </li>
+        <li> <a href="#"> <div class="amazingIcon"></div>
+          <p>Amazing rewards</p>
+          </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footerPublic text-center">
+  <div class="container"> <a href="#">About</a> <a href="#">Jobs</a> <a href="#">Terms</a> <a href="#">Privacy</a> <a href="#">Cookies</a> <a href="#">Businesses</a> <a href="#">Investors</a> <a href="#">Adversters  © 2015 Your Next Room</a> </div>
+</footer>
+
+<div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="userModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body"> 
+        <div class="popupInfo">
+            <div class="loginBlock">
+              <div class="loginDetail">
+                <form novalidate role="form" name="loginForm" ng-submit="login()">
+                   <div class="alert alert-danger" role="alert" ng-show="loginError">{{loginError}}</div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="Email1Address" placeholder="Enter Email" ng-model="loginModel.email" required="required" auto-focus>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="Password1" placeholder="Enter Password" ng-model="loginModel.password" required="required" auto-focus>
+                  </div>
+                  <div class="form-group">
+                    <p class="help-block">
+                      <a href="#" class="btn btn-link">Forgot password?</a>
+                    </p>
+                  </div>
+                  <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">Log in</button>
+                </form>
+                <div class="saprator">
+                  <span></span>
+                  <em> Or </em>
+                </div>
+              </div>
+              <div class="signupStage">
+                <ul>
+                  <li> <a href="/users/auth/google_oauth2" class="google"> <span class="googleIcon"></span> <em>Sign in with Google</em> </a> </li>
+                  <li> <a href="/users/auth/facebook" class="facebook"> <span class="facebookIcon"></span> <em>Sign in with Facebook</em> </a> </li>
+                  <li> <a href="/users/auth/twitter" class="twitter"> <span class="twitterIcon"></span> <em>Sign in with Twitter</em> </a> </li>
+                </ul>
+                <div class="needHelp"><a href="#">Need Help ?</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="userModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateSignupForm('signup')"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" ng-show="signup_step == 'signup'"> 
+        <div class="popupInfo">
+          <div class="signup">
+            <ul>
+              <li> <a href="javascript:void(0)" ng-click="updateSignupForm('signup_stage')"> <span class="lookingRoomIcon"></span> <em>Looking for a room</em> </a> </li>
+              <li> <a href="javascript:void(0)" ng-click="updateSignupForm('list_room')" class="listRoom"> <span class="listRoomIcon"></span> <em>Listing a room / properties</em> </a> </li>
+            </ul>
+            <div class="needHelp"><a href="#">Need Help ?</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body" ng-show="signup_step == 'signup_stage'"> 
+        <div class="popupInfo">
+          <div class="signupStage">
+            <ul>
+                <li> <a href="javascript:void(0)" class="email" ng-click="updateSignupForm('signup_email')"> <span class="emailIcon"></span> <em>Sign up via email</em> </a> </li>
+                  <li> <a href="/users/auth/google_oauth2" class="google"> <span class="googleIcon"></span> <em>Sign up with Google</em> </a> </li>
+                  <li> <a href="/users/auth/facebook" class="facebook"> <span class="facebookIcon"></span> <em>Sign up with Facebook</em> </a> </li>
+                  <li> <a href="/users/auth/twitter" class="twitter"> <span class="twitterIcon"></span> <em>Sign up with Twitter</em> </a> </li>
+              </ul>
+              <div class="needHelp"><a href="#">Need Help ?</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body paddingNone" ng-show="signup_step == 'signup_email'"> 
+        <div class="popupInfo">
+          <div class="popupCamBlock">
+            <div class="topGrayBlock"><img id="tenantUploadPreview" src="/assets/user-big.png" width="121" height="121" alt="">
+              <div class="fileinputs"><input type="file" class="file" ng-model="signupModel.userAvatar" onchange="angular.element(this).scope().setAvatar(this, 'tenantUploadPreview')"></div>
+              <div class="camBlock"><a href="javascript:void(0)" lk-google-picker picker-files="tenant_image_url" preview-file-id="tenantUploadPreview" class="bigCamIcon"></a></div>
+            </div>
+            <div class="addressInfo addressInfoPadding">
+              <form novalidate role="form" name="signupForm" ng-submit="signup()">
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <span class="dropDown">
+                      <select name="select" id="selectAccount" ng-model="signupModel.userAccount" required="required">
+                        <option value="">Account</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                      </select>
+                    </span> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupContactIcon"></a></div>
+                  <div class="col-md-6 col-xs-10 col-sm-6">
+                    <input type="text" class="form-control" id="signupUserName" name="signupUserName" placeholder="Full Name" autocomplete="off" ng-model="signupModel.userName" ng-pattern="/^[a-zA-Z ]*$/" ng-minlength="3" required="required">
+                    <span class="error" ng-show="signupForm.signupUserName.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="signupForm.signupUserName.$error.minlength">To short.</span>
+                  </div>
+                  <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                    <span class="dropDown">
+                      <select name="select" id="selectTitle" ng-model="signupModel.userTitle" required="required">
+                        <option value="">Title</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Sir">Sir</option>
+                        <option value="Madam">Madam</option>
+                      </select>
+                    </span>
+                  </div>
+                 </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupMsgIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="signupuserEmail" placeholder="Email address" autocomplete="off" ng-model="signupModel.userEmail" name="clientEmail" required="required">
+                    <span class="error" ng-show="signupForm.clientEmail.$error.email">Not valid email.</span>
+                    <span class="error">{{signUpError.email[1]}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="signupUserconfirmemail" name="emailConfirm" placeholder="Confirm your email address" ng-model="signupModel.userConfirmEmail" match="signupModel.userEmail">
+                    <div ng-show="signupForm.emailConfirm.$error.mismatch">
+                      <span class="error">Confirm email same as email.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPasswordIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="password" class="form-control" id="signupUserpassword" name="password1" placeholder="Password" ng-model="signupModel.userPassword" ng-minlength="6" required="required">
+                    <span class="error" ng-show="signupForm.password1.$error.minlength">To short.</span>
+                    <span class="error">{{signUpError.password[0]}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="password" class="form-control" id="signupUserconfirmpassword" name="passwordConfirm" placeholder="Confirm your password" ng-model="signupModel.userConfirmPassword" required="required" match="signupModel.userPassword">
+                    <div ng-show="signupForm.passwordConfirm.$error.mismatch">
+                      <span class="error">Confirm password same as password.</span>
+                    </div>
+                    <span class="error">{{signUpError.password_confirmation[0]}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupCalIcon"></a></div>
+                  <div class="col-md-6 col-xs-10 col-sm-6">
+                    <input type="text" class="form-control" id="userdob" placeholder="Date Of Brith" name="userDOB" datepicker ng-model="signupModel.userDOB" name="userDOB" ng-readonly="true" required="required">
+                  </div>
+                  <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                    <span class="dropDown">
+                      <select name="select" id="selectGender" ng-model="signupModel.userGender" required="required">
+                        <option value="">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </span>
+                  </div>
+                </div> 
+                <p>&nbsp;</p>
+                <div class="bottomButtonBar text-center"><input type="submit" class="bottomButtonBar text-center" ng-disabled="signupForm.$invalid" value="Continue"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body" ng-show="signup_step == 'signup_stage_2'"> 
+        <div class="popupInfo">
+          <div class="addressInfo">
+            <form novalidate role="form" name="tenantSignupFormStepTwo" ng-submit="becomeTenant()">
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPhoneIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userPhoneNumber" placeholder="Phone number" ng-model="signupNextStepModel.userPhoneNumber" ng-pattern="/^[0-9 ]*$/" id="inputPhone" name="phone" required="required">
+                  <span class="error" ng-show="tenantSignupFormStepTwo.phone.$error.pattern">Required only digits.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupAddIcon"></a></div>
+                <div class="col-md-6 col-xs-10 col-sm-6">
+                  <input type="text" class="form-control" id="userAddress" placeholder="Address" ng-model="signupNextStepModel.userAddress" required="required">
+                </div>
+                <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                  <span class="dropDown">
+                    <select name="select" id="selectAddressType" ng-model="signupNextStepModel.userAddressType" required="required">
+                      <option value="home" selected="selected">Home</option>
+                      <option value="work">Work</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userCity" placeholder="City" ng-model="signupNextStepModel.userCity" ng-pattern="/^[a-zA-Z ]*$/" name="city" ng-minlength="3" required="required">
+                    <span class="error" ng-show="tenantSignupFormStepTwo.city.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="tenantSignupFormStepTwo.city.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userZipCode" placeholder="Post code / zip code" ng-model="signupNextStepModel.userZipCode" id="inputPhone" name="zipCode" max-length="10"  required="required">
+                  <span class="error" ng-show="tenantSignupFormStepTwo.zipCode.$error.maxlength">Require only 10 digits</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userCountry" placeholder="Country" ng-model="signupNextStepModel.userCountry" ng-pattern="/^[a-zA-Z ]*$/"  name="country" ng-minlength="3" required="required">
+                  <span class="error" ng-show="tenantSignupFormStepTwo.country.$error.pattern">Required only alphabets.</span>
+                   <span class="error" ng-show="tenantSignupFormStepTwo.country.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <div class="checkbox formCheckBox">
+                    <label><input type="checkbox" id="userProperties" ng-model="signupNextStepModel.userProperties" required="required">Verify all added properties</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-5 col-xs-10 col-sm-5">
+                    Brief Description
+                </div>
+                <div class="col-md-5 col-xs-10 col-xs-offset-2 col-sm-5 col-sm-offset-0">
+                  <span class="dropDown">
+                    <select name="select" id="selectOccupation" ng-model="signupNextStepModel.userOccupation" required="required">
+                      <option value="">Occupation</option>
+                      <option value="student">Student</option>
+                      <option value="professional">Professional</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <textarea name="textfield" id="textfield" class="form-control popupTextarea" ng-model="signupNextStepModel.userDescription" maxlength="500" required="required"></textarea>
+                  <div class="redLine"><span>{{signupNextStepModel.userDescription.length}}/500</span></div>
+                </div>
+                <p>&nbsp;</p>
+              </div> 
+              <div class="bottomButtonBar">
+                <input type="submit" class="bottomButtonBar text-center" ng-disabled="tenantSignupFormStepTwo.$invalid" value="Confirm"><span aria-hidden="true">&times;</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body" ng-show="signup_step == 'list_room'"> 
+        <div class="popupInfo">
+          <div class="landlord">
+            <ul>
+              <li> <a href="javascript:void(0)" ng-click="updateSignupForm('individual')"> <span class="indiviIcon"></span> <em>Individual</em> </a> </li>
+              <li> <a href="javascript:void(0)" ng-click="updateSignupForm('business_stage')" class="bussiness"> <span class="businessIcon"></span> <em>Business</em> </a> </li>
+            </ul>
+          <div class="needHelp"><a href="#">Need Help ?</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body" ng-show="signup_step == 'individual'"> 
+        <div class="popupInfo">
+          <div class="signupStage">
+            <ul>
+                <li> <a href="javascript:void(0)" class="email" ng-click="updateSignupForm('individual_stage')"> <span class="emailIcon"></span> <em>Sign up via email</em> </a> </li>
+                  <li> <a href="/users/auth/google_oauth2?user_type=landlord" class="google"> <span class="googleIcon"></span> <em>Sign up with Google</em> </a> </li>
+                  <li> <a href="/users/auth/facebook?user_type=landlord" class="facebook"> <span class="facebookIcon"></span> <em>Sign up with Facebook</em> </a> </li>
+                  <li> <a href="/users/auth/twitter?user_type=landlord" class="twitter"> <span class="twitterIcon"></span> <em>Sign up with Twitter</em> </a> </li>
+              </ul>
+              <div class="needHelp"><a href="#">Need Help ?</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual Manager last steps -->
+      <div class="modal-body paddingNone" ng-show="signup_step == 'individual_stage'"> 
+        <div class="popupInfo">
+          <div class="popupCamBlock">
+            <div class="topGrayBlock"><img id="landlordUploadPreview" src="/assets/user-big.png" width="121" height="121" alt="">
+              <div class="fileinputs"><input type="file" class="file" ng-model="individualSignupModel.userAvatar" onchange="angular.element(this).scope().setAvatar(this, 'landlordUploadPreview')"></div>
+              <div class="camBlock"><a href="javascript:void(0)" lk-google-picker picker-files="landlord_image_url" preview-file-id="landlordUploadPreview" class="bigCamIcon"></a></div>
+            </div>
+            <div class="addressInfo addressInfoPadding">
+              <form novalidate role="form" name="individualSignupFormStepOne" ng-submit="landlordSignup()">
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <span class="dropDown">
+                      <select name="select" id="selectAccount" ng-model="individualSignupModel.userAccount" required="required">
+                        <option value="">Account</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                      </select>
+                    </span> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupContactIcon"></a></div>
+                  <div class="col-md-6 col-xs-10 col-sm-6">
+                    <input type="text" class="form-control" id="individualSignupUserName" name="individualSignupUserName" placeholder="Full Name" autocomplete="off" ng-model="individualSignupModel.userName" ng-pattern="/^[a-zA-Z ]*$/" ng-minlength="3" required="required">
+                    <span class="error" ng-show="individualSignupFormStepOne.individualSignupUserName.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="individualSignupFormStepOne.individualSignupUserName.$error.minlength">To short.</span>
+                  </div>
+                  <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                    <span class="dropDown">
+                      <select name="select" id="selectTitle" ng-model="individualSignupModel.userTitle" required="required">
+                        <option value="">Title</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Sir">Sir</option>
+                        <option value="Madam">Madam</option>
+                      </select>
+                    </span>
+                  </div>
+                 </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupMsgIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="individualSignupUseremail" placeholder="Email address" autocomplete="off" ng-model="individualSignupModel.userEmail" name="clientEmail" required="required">
+                    <span class="error" ng-show="individualSignupFormStepOne.clientEmail.$error.email">Not valid email.</span>
+                    <span class="error">{{individualSignUpError.email[1]}}</span>
+                    <div class="alert alert-danger" role="alert" ng-show="loginError">{{individualSignUpError.email[1]}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="individualSignupUserconfirmemail" autocomplete="off" name="individualEmailConfirm" placeholder="Confirm your email address" ng-model="individualSignupModel.userConfirmEmail" match="individualSignupModel.userEmail">
+                    <div ng-show="individualSignupFormStepOne.individualEmailConfirm.$error.mismatch">
+                      <span class="error">Confirm email same as email.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPasswordIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="password" class="form-control" id="individualSignupUserpassword" name="password1" placeholder="Password" ng-model="individualSignupModel.userPassword" ng-minlength="6" required="required">
+                    <span class="error" ng-show="individualSignupFormStepOne.password1.$error.minlength">To short.</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="password" class="form-control" id="individualSignupUserconfirmpassword" name="passwordConfirm" placeholder="Confirm your password" ng-model="individualSignupModel.userConfirmPassword" required="required" match="individualSignupModel.userPassword">
+                    <div ng-show="individualSignupFormStepOne.passwordConfirm.$error.mismatch">
+                      <span class="error">Confirm password same as password.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupCalIcon"></a></div>
+                  <div class="col-md-6 col-xs-10 col-sm-6">
+                    <input type="text" class="form-control" id="individualUserdob" placeholder="Date Of Brith" name="userDOB" datepicker ng-model="individualSignupModel.userDOB" name="userDOB" ng-readonly="true" required="required">
+                  </div>
+                  <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                    <span class="dropDown">
+                      <select name="select" id="individualSelectGender" ng-model="individualSignupModel.userGender" required="required">
+                        <option value="">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </span>
+                  </div>
+                </div> 
+                <p>&nbsp;</p>
+                <div class="bottomButtonBar text-center"><input type="submit" class="bottomButtonBar text-center" ng-disabled="individualSignupFormStepOne.$invalid" value="Continue"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual Manager last steps -->
+      <div class="modal-body" ng-show="signup_step == 'individual_stage_2'"> 
+        <div class="popupInfo">
+          <div class="addressInfo">
+            <form novalidate role="form" name="landlordSignupFormStepTwo" ng-submit="becomeLandlord()">
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPhoneIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userPhoneNumber" placeholder="Phone number" ng-model="landlordSignupNextStepModel.userPhoneNumber" id="inputPhone" name="phone" ng-pattern="/^[0-9]*$/" required="required">
+                    <span class="error" ng-show="landlordSignupFormStepTwo.phone.$error.pattern">Required only numbers.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupAddIcon"></a></div>
+                <div class="col-md-6 col-xs-10 col-sm-6">
+                  <input type="text" class="form-control" id="userAddress" placeholder="Address" ng-model="signupNextStepModel.userAddress" required="required">
+                </div>
+                <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                  <span class="dropDown">
+                    <select name="select" id="selectAddressType" ng-model="landlordSignupNextStepModel.userAddressType" required="required">
+                      <option value="home" selected="selected">Home</option>
+                      <option value="work">Work</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userCity" placeholder="City" ng-model="landlordSignupNextStepModel.userCity" ng-pattern="/^[a-zA-Z ]*$/" name="city" ng-minlength="3" required="required">
+                    <span class="error" ng-show="landlordSignupFormStepTwo.city.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="landlordSignupFormStepTwo.city.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userZipCode" placeholder="Post code / zip code" ng-model="landlordSignupNextStepModel.userZipCode" ng-maxlength="10" id="inputPhone" name="zipCode" required="required">
+                  <span class="error" ng-show="landlordSignupFormStepTwo.zipCode.$error.maxlength">Require only 10 digits</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="userCountry" placeholder="Country" ng-model="landlordSignupNextStepModel.userCountry" ng-pattern="/^[a-zA-Z ]*$/" name="country" ng-minlength="3" required="required">
+                    <span class="error" ng-show="landlordSignupFormStepTwo.country.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="landlordSignupFormStepTwo.country.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <div class="checkbox formCheckBox">
+                    <label><input type="checkbox" id="userProperties" ng-model="landlordSignupNextStepModel.userProperties" required="required">Verify all added properties</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-5 col-xs-10 col-sm-5">
+                    Brief Description
+                </div>
+                <div class="col-md-5 col-xs-10 col-xs-offset-2 col-sm-5 col-sm-offset-0">
+                  <span class="dropDown">
+                    <select name="select" id="selectOccupation" ng-model="landlordSignupNextStepModel.userOccupation" required="required">
+                      <option value="">Occupation</option>
+                      <option value="student">Student</option>
+                      <option value="professional">Professional</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <textarea name="textfield" id="textfield" class="form-control popupTextarea" ng-model="landlordSignupNextStepModel.userDescription" maxlength="500" required="required"></textarea>
+                  <div class="redLine"><span>{{landlordSignupNextStepModel.userDescription.length}}/500</span></div>
+                </div>
+                <p>&nbsp;</p>
+              </div> 
+              <div class="bottomButtonBar">
+                <input type="submit" class="bottomButtonBar text-center" ng-disabled="landlordSignupFormStepTwo.$invalid" value="Confirm">
+                <span aria-hidden="true">&times;</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manager first steps -->
+      <div class="modal-body paddingNone" ng-show="signup_step == 'business_stage'"> 
+        <div class="popupInfo">
+          <div class="popupCamBlock">
+            <div class="topGrayBlock"><img id="managerUploadPreview" src="/assets/home.png" width="81" height="90" alt="">
+              <div class="fileinputs"><input type="file" class="file" ng-model="managerSignupModel.userAvatar" onchange="angular.element(this).scope().setAvatar(this, 'managerUploadPreview')"></div>
+              <div class="camBlock"><a href="javascript:void(0)" lk-google-picker picker-files="manager_image_url" preview-file-id="managerUploadPreview" class="bigCamIcon"></a></div>
+            </div>
+            <div class="addressInfo addressInfoPadding"> 
+              <form novalidate role="form" name="managerSignupForm" ng-submit="managerSignup()">
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <span class="dropDown">
+                      <select name="select" id="selectManagerAccountType" ng-model="managerSignupModel.managerAccountType" required="required">
+                        <option value="">Account</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                      </select>
+                    </span> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupContactIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="text" class="form-control" id="managerCompanyName" placeholder="Registered Company Name" ng-model="managerSignupModel.managerCompanyName"  name="companyName" autocomplete="off" required="required">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupMsgIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="managerEmail" placeholder="Email address" autocomplete="off" ng-model="managerSignupModel.userEmail" name="clientEmail" required="required">
+                    <span class="error" ng-show="managerSignupForm.clientEmail.$error.email">Not valid email.</span>
+                    <span class="error">{{managerSignUpError.email[1]}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="email" class="form-control" id="managerConfirmEmail" autocomplete="off" placeholder="Confirm your email address" ng-model="managerSignupModel.managerConfirmEmail" name="managerEmailConfirm" match="managerSignupModel.userEmail" required="required">
+                    <span class="error" ng-show="managerSignupForm.managerEmailConfirm.$error.mismatch">Confirm email same as email.</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPasswordIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="password" class="form-control" id="managerPassword" name="password1" placeholder="password" ng-model="managerSignupModel.userPassword"  ng-minlength="6" required="required">
+                    <span class="error" ng-show="managerSignupForm.password1.$error.minlength">To short.</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupConfirmIcon"></a></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <input type="password" class="form-control" id="managerConfirmPassword" placeholder="Confirm your password" ng-model="managerSignupModel.userConfirmPassword" name="passwordConfirm" match="managerSignupModel.userPassword" required="required">
+                    <span class="error" ng-show="managerSignupForm.passwordConfirm.$error.mismatch">Confirm password same as password.</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                 
+                  <div class="col-md-10 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                    <input type="text" class="form-control" id="landlordAgent" placeholder="Estate Agent" ng-model="managerSignupNextStepModel.ManagerAgent" ng-pattern="/^[a-zA-Z ]*$/" ng-minlength="3" name="agent" autocomplete="off" required="required">
+                    <span class="error" ng-show="managerSignupForm.agent.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="managerSignupForm.agent.$error.minlength">To short.</span>
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                  <div class="col-md-10 col-xs-10 col-sm-10">
+                    <div class="checkbox formCheckBox">
+                      <label><input type="checkbox" id="managerProperties" ng-model="managerSignupModel.managerProperties">Verify all added properties</label>
+                    </div>
+                  </div>
+                </div>
+                <p>&nbsp;</p>
+                 <!--  -->
+                <div class="bottomButtonBar text-center">
+                  <a href="javascript:void(0)">
+                    <input type="submit" class="bottomButtonBar text-center" ng-disabled="managerSignupForm.$invalid" value="Continue">
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manager last steps -->
+      <div class="modal-body" ng-show="signup_step == 'business_stage_2'"> 
+        <div class="popupInfo">
+          <div class="addressInfo"> 
+            <form novalidate role="form" name="managerSignupFormStepTwo" ng-submit="becomeManager()">
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupContactIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="managerFullname" autocomplete="off" placeholder="Contact person full name" ng-model="managerSignupNextStepModel.managerFullname" ng-pattern="/^[a-zA-Z ]*$/" ng-minlength="3" name="personName" required="required">
+                  <span class="error" ng-show="managerSignupFormStepTwo.personName.$error.pattern">Required only alphabets.</span>
+                  <span class="error" ng-show="managerSignupFormStepTwo.personName.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPhoneIcon"></a></div>
+                <div class="col-md-6 col-xs-10 col-sm-6">
+                  <input type="text" class="form-control" id="managerPhoneNumber" placeholder="Phone number" ng-model="managerSignupNextStepModel.managerPhoneNumber" ng-pattern="/^[0-9 ]*$/" id="inputPhone" name="phoneNumber" autocomplete="off" required="required">
+                  <span class="error" ng-show="managerSignupFormStepTwo.phoneNumber.$error.pattern">Required only digits.</span>
+                </div>
+                <div class="col-md-4 col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                  <span class="dropDown">
+                    <select name="select" id="selectManagerAddressType" ng-model="managerSignupNextStepModel.managerAddressType" required="required"> 
+                      <option value="home">Home</option>
+                      <option value="work">Work</option>
+                    </select>
+                  </span>
+                </div>
+             </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupMsgIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="email" class="form-control" id="managerEmail" placeholder="Email address" autocomplete="off" ng-model="managerSignupNextStepModel.managerEmailAddress" name="clientEmail" required="required">
+                  <span class="error" ng-show="managerSignupFormStepTwo.clientEmail.$error.email">Not valid email.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupPossitionIcon "></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <input type="text" class="form-control" id="managerPosition" placeholder="Position" ng-model="managerSignupNextStepModel.managerPosition" ng-pattern="/^[a-zA-Z ]*$/" ng-minlength="2" name="position" required="required">
+                    <span class="error" ng-show="managerSignupFormStepTwo.position.$error.pattern">Required only alphabets.</span>
+                    <span class="error" ng-show="managerSignupFormStepTwo.position.$error.minlength">To short.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupContactPersonIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10 contactPersonPhoto">
+                  <div class="camIcon"><a href="javascript:void(0)" lk-google-picker picker-files="contact_person_image_url" class="popupSmallCamIcon"></a></div>
+                  <div>Contact person photo</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"><a href="#" class="popupComDesIcon"></a></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  Company Description
+                </div>
+              </div> 
+              <div class="row">
+                <div class="col-md-2 col-xs-2 col-sm-2"></div>
+                <div class="col-md-10 col-xs-10 col-sm-10">
+                  <textarea name="textfield" id="textfield" class="form-control popupTextarea" ng-model="managerSignupNextStepModel.managerCompanyDescription" maxlength="500" name="description" required="required"></textarea>
+                  <div class="redLine"><span>{{managerSignupNextStepModel.managerCompanyDescription.length}}/500</span></div>
+                </div>
+                <p>&nbsp;</p>
+              </div>
+              <div class="bottomButtonBar">
+                <input type="submit" class="bottomButtonBar text-center" ng-disabled="managerSignupFormStepTwo.$invalid" value="Confirm"><span aria-hidden="true">&times;</span></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

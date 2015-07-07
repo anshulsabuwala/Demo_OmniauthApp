@@ -1,0 +1,15 @@
+YourNextRoom.config [
+  'lkGoogleSettingsProvider'
+  (lkGoogleSettingsProvider) ->
+    lkGoogleSettingsProvider.configure
+      apiKey: '<%= ENV['PICKER_API_KEY'] %>'
+      clientId: '<%= ENV['PICKER_CLIENT_ID'] %>'
+      features: []
+      scopes: [
+        'https://www.googleapis.com/auth/photos'
+          'email'
+          'profile'
+      ]
+      views: ['PhotosView']
+    return
+]
